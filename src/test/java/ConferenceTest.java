@@ -109,34 +109,34 @@ public class ConferenceTest {
         session.getName() + ", facilitated by " + peter.getFirstName() + " " + peter.getLastName()
     ));
   }
-
-  @Test
-  @DisplayName("11. A conference has a getSummary method which indicates the conference is open if it's not at max registrants")
-  public void getSummary_indicates_open() {
-    Person peter = new Person("Peter", "Pan", "panny@neverland.com");
-
-    this.conference.register(peter);
-
-    String conferenceSummary = this.conference.getSummary();
-    System.out.println(conferenceSummary);
-    assertTrue(conferenceSummary.contains("Registration is still open"));
-    assertFalse(conferenceSummary.contains("Registration is now closed"));
-  }
-
-  @Test
-  @DisplayName("12. A conference has a getSummary method which indicates the conference is closed if it's at max registrants")
-  public void getSummary_indicates_closed() {
-    Person peter = new Person("Peter", "Pan", "panny@neverland.com");
-    Person wendy = new Person("Wendy", "Darling", "ladybird@gmail.com");
-    Person tinkerbell = new Person("Tinkerbell", "Fairy", "tink@neverland.com");
-
-    this.conference.register(peter);
-    this.conference.register(wendy);
-    this.conference.register(tinkerbell);
-
-    String conferenceSummary = this.conference.getSummary();
-
-    assertFalse(conferenceSummary.contains("Registration is still open"));
-    assertTrue(conferenceSummary.contains("Registration is now closed"));
-  }
+//
+//  @Test
+//  @DisplayName("11. A conference has a getSummary method which indicates the conference is open if it's not at max registrants")
+//  public void getSummary_indicates_open() {
+//    Person peter = new Person("Peter", "Pan", "panny@neverland.com");
+//
+//    this.conference.register(peter);
+//
+//    String conferenceSummary = this.conference.getSummary();
+//    System.out.println(conferenceSummary);
+//    assertTrue(conferenceSummary.contains("Registration is still open"));
+//    assertFalse(conferenceSummary.contains("Registration is now closed"));
+//  }
+//
+//  @Test
+//  @DisplayName("12. A conference has a getSummary method which indicates the conference is closed if it's at max registrants")
+//  public void getSummary_indicates_closed() {
+//    Person peter = new Person("Peter", "Pan", "panny@neverland.com");
+//    Person wendy = new Person("Wendy", "Darling", "ladybird@gmail.com");
+//    Person tinkerbell = new Person("Tinkerbell", "Fairy", "tink@neverland.com");
+//
+//    this.conference.register(peter);
+//    this.conference.register(wendy);
+//    this.conference.register(tinkerbell);
+//
+//    String conferenceSummary = this.conference.getSummary();
+//
+//    assertFalse(conferenceSummary.contains("Registration is still open"));
+//    assertTrue(conferenceSummary.contains("Registration is now closed"));
+//  }
 }
