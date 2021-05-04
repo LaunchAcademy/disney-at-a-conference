@@ -10,37 +10,37 @@ public class ConferenceTest {
   private Conference conference;
 
   @BeforeEach
-  @DisplayName("A conference is initialized with a name and a max number of registrants")
+  @DisplayName("1. A conference is initialized with a name and a max number of registrants")
   public void setupConference() {
     this.conference = new Conference("Neverland", 3);
   }
 
   @Test
-  @DisplayName("A conference is initialized with a name")
+  @DisplayName("2. A conference is initialized with a name")
   public void init_name_present() {
     assertEquals("Neverland", this.conference.getName());
   }
 
   @Test
-  @DisplayName("A conference is initialized with a number of max registrants")
+  @DisplayName("3. A conference is initialized with a number of max registrants")
   public void init_maxRegistrants_present() {
     assertEquals(3, this.conference.getMaxRegistrants());
   }
 
   @Test
-  @DisplayName("A conference is initialized with an empty list of attendees")
+  @DisplayName("4. A conference is initialized with an empty list of attendees")
   public void init_attendees_present() {
     assertEquals(new ArrayList(), this.conference.getAttendees());
   }
 
   @Test
-  @DisplayName("A conference is initialized with an empty list of sessions")
+  @DisplayName("5. A conference is initialized with an empty list of sessions")
   public void init_sessions_present() {
     assertEquals(new ArrayList(), this.conference.getSessions());
   }
 
   @Test
-  @DisplayName("A conference has a register method which adds a Person to the attendees and returns true")
+  @DisplayName("6. A conference has a register method which adds a Person to the attendees and returns true")
   public void register_adds_attendee() {
     Person peterPan = new Person("Peter", "Pan", "panny@neverland.com");
     assertEquals(true, this.conference.register(peterPan));
@@ -49,7 +49,7 @@ public class ConferenceTest {
   }
 
   @Test
-  @DisplayName("If a person is already registered, it does not add them to the attendees and returns false")
+  @DisplayName("7. If a person is already registered, it does not add them to the attendees and returns false")
   public void register_checks_attendees() {
     Person peterPan = new Person("Peter", "Pan", "panny@neverland.com");
     Person fakePeterPan = new Person("Captain", "Hook", "panny@neverland.com");
@@ -59,7 +59,7 @@ public class ConferenceTest {
   }
 
   @Test
-  @DisplayName("If the conference is full, it doesn't let anyone else register")
+  @DisplayName("8. If the conference is full, it doesn't let anyone else register")
   public void register_checks_maxRegistrants() {
     Person peterPan = new Person("Peter", "Pan", "panny@neverland.com");
     Person wendy = new Person("Wendy", "Darling", "ladybird@gmail.com");
@@ -74,7 +74,7 @@ public class ConferenceTest {
   }
 
   @Test
-  @DisplayName("A conference has an addSession method which adds sessions to the conference schedule")
+  @DisplayName("9. A conference has an addSession method which adds sessions to the conference schedule")
   public void addSession_adds_session_to_list() {
     Person tinkerbell = new Person("Tinkerbell", "Fairy", "tink@neverland.com");
     Session session = new Session("Visit Mermaid Lagoon", tinkerbell);
@@ -82,7 +82,7 @@ public class ConferenceTest {
   }
 
   @Test
-  @DisplayName("A conference has a getSummary method which displays conference information")
+  @DisplayName("10. A conference has a getSummary method which displays conference information")
   public void getSummary_prints_conference_info() {
     Person peter = new Person("Peter", "Pan", "panny@neverland.com");
     Person wendy = new Person("Wendy", "Darling", "ladybird@gmail.com");
@@ -111,7 +111,7 @@ public class ConferenceTest {
   }
 
   @Test
-  @DisplayName("A conference has a getSummary method which indicates the conference is open if it's not at max registrants")
+  @DisplayName("11. A conference has a getSummary method which indicates the conference is open if it's not at max registrants")
   public void getSummary_indicates_open() {
     Person peter = new Person("Peter", "Pan", "panny@neverland.com");
 
@@ -124,7 +124,7 @@ public class ConferenceTest {
   }
 
   @Test
-  @DisplayName("A conference has a getSummary method which indicates the conference is closed if it's at max registrants")
+  @DisplayName("12. A conference has a getSummary method which indicates the conference is closed if it's at max registrants")
   public void getSummary_indicates_closed() {
     Person peter = new Person("Peter", "Pan", "panny@neverland.com");
     Person wendy = new Person("Wendy", "Darling", "ladybird@gmail.com");
